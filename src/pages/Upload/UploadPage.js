@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
+import UploadFileComp from '../../components/UploadComponents/UploadFileComp';
 
-const UploadPage = () => {
-    return <div>Upload file page</div>
-};
+const UploadPage = () => (
+  <div className="upload-page-outer">
+    <UploadFileComp />
+  </div>
+);
 
 export default UploadPage;

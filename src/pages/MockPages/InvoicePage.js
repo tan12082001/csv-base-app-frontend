@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const InvoicePage = () => {
-    return <div>Invoice Page</div>
-};
+const InvoicePage = () => <div>Invoice Page</div>;
 
 export default InvoicePage;

@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const HamButton = () => {
-    return <div>Hamburger</div>
-};
+const HamButton = () => <div>Hamburger</div>;
 
 export default HamButton;

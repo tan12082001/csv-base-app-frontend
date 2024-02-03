@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const Header = () => {
-    return <div>Base Header</div>
-};
+const UploadHeader = () => <div className="upload-page-header">Base Header</div>;
 
-export default Header;
+export default UploadHeader;

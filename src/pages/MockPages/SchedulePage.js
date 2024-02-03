@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const SchedulePage = () => {
-    return <div>Schedule page</div>
-};
+const SchedulePage = () => <div>Schedule page</div>;
 
 export default SchedulePage;
