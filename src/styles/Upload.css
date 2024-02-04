@@ -1,0 +1,23 @@
+.upload-page-outer {
+  background: var(--secondary-app-background);
+}
+
+.upload-page-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button.upload-button {
+  background: var(--main-app-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 8px;
+}
