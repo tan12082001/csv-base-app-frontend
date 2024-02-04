@@ -1,10 +1,9 @@
 import React from 'react';
-import UploadHeader from '../Header/UploadHeader';
+import UploadCSV from './UploadCSV';
 
 const UploadFileComp = () => (
   <div className="upload-page-inner">
-    <UploadHeader />
-    <p>upload file section</p>
+    <UploadCSV />
   </div>
 );
 

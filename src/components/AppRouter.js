@@ -8,19 +8,23 @@ import CalendarPage from '../pages/MockPages/CalendarPage';
 import NotificationPage from '../pages/MockPages/NotificationPage';
 import SettingsPage from '../pages/MockPages/SettingsPage';
 import SideNav from './Navigation/SideNav';
+import AppHeader from './Header/AppHeader';
 
 const AppRouter = () => (
   <Router>
     <SideNav />
-    <Routes>
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/upload" element={<UploadPage />} />
-      <Route path="/invoice" element={<InvoicePage />} />
-      <Route path="/schedule" element={<SchedulePage />} />
-      <Route path="/calendar" element={<CalendarPage />} />
-      <Route path="/notifications" element={<NotificationPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
-    </Routes>
+    <div className="header-page-div">
+      <AppHeader />
+      <Routes>
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/upload" element={<UploadPage />} />
+        <Route path="/invoice" element={<InvoicePage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/notifications" element={<NotificationPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+      </Routes>
+    </div>
   </Router>
 );
 
