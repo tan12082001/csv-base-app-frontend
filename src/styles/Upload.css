@@ -21,3 +21,8 @@ button.upload-button {
   display: flex;
   gap: 8px;
 }
+
+.csv-file-label {
+  display: inline-block;
+  color: var(--main-app-color);
+}

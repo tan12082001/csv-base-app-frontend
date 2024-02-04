@@ -18,7 +18,7 @@ const AppHeader = () => {
       '/notifications': 'Notification',
       '/settings': 'Settings',
     };
-    setPageTitle(titleMapping[location.pathname] || 'Unknown page');
+    setPageTitle(titleMapping[location.pathname] || '');
   }, [location.pathname]);
 
   return (
