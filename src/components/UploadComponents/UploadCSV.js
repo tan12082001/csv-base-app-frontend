@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Papa from "papaparse";
-import UploadFile from "../../assets/upload-icon.png";
-import ExcelIcon from "../../assets/excel-icon.png";
-import DisplayCSV from "./DisplayCSV";
+import React, { useState } from 'react';
+import Papa from 'papaparse';
+import UploadFile from '../../assets/upload-icon.png';
+import ExcelIcon from '../../assets/excel-icon.png';
+import DisplayCSV from './DisplayCSV';
 import LoadingIcon from '../../assets/loading-icon.png';
 
-const allowedExtensions = ["csv", "xlsx", "xls"];
+const allowedExtensions = ['csv', 'xlsx', 'xls'];
 
 const UploadCSV = () => {
   // store selected file name
@@ -13,21 +13,21 @@ const UploadCSV = () => {
 
   // store file parsed data
   const [fileData, setFileData] = useState([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [uploadData, setUploadData] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (e) => {
-    setError("");
+    setError('');
 
     if (e.target.files.length) {
       const file = e.target.files[0];
 
-      const fileExtension = file?.type.split("/")[1];
+      const fileExtension = file?.type.split('/')[1];
       if (!allowedExtensions.includes(fileExtension)) {
         setError("Doesn't support the selected file.");
         setTimeout(() => {
-          setError("");
+          setError('');
         }, 3000);
         return;
       }
@@ -42,6 +42,18 @@ const UploadCSV = () => {
     setUploadData(false);
   };
 
+  const parseFileData = (file) => new Promise((resolve) => {
+    Papa.parse(file, {
+      complete: (result) => {
+        setFileData(result.data);
+        setUploadData(true);
+        setIsLoading(false);
+        resolve();
+      },
+      header: true,
+    });
+  });
+
   const handleParseDataDisplay = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -49,24 +61,9 @@ const UploadCSV = () => {
     if (selectedFile) {
       await parseFileData(selectedFile);
     } else {
-      setError("Please select a file.");
+      setError('Please select a file.');
       setIsLoading(false);
     }
-  };
-
-  const parseFileData = (file) => {
-    return new Promise((resolve) => {
-      Papa.parse(file, {
-        complete: (result) => {
-          console.log("Parsed CSV data:", result.data);
-          setFileData(result.data);
-          setUploadData(true);
-          setIsLoading(false);
-          resolve();
-        },
-        header: true,
-      });
-    });
   };
 
   return (
@@ -98,7 +95,7 @@ const UploadCSV = () => {
                     name="csv-file"
                     type="File"
                     placeholder="browse"
-                    style={{ display: "none" }}
+                    style={{ display: 'none' }}
                     onChange={handleFileChange}
                   />
                 </label>

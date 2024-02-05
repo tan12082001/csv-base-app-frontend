@@ -249,3 +249,16 @@ span.areas-select-tag__indicator-separator {
 .td-link a {
   color: #5b93ff;
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5b93ff;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
