@@ -7,22 +7,245 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 12% 0;
 }
 
-button.upload-button {
+.upload-file-div-outer {
+  gap: 1.3rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  width: 51.4%;
+}
+
+.upload-button {
   background: var(--main-app-color);
   color: #fff;
   border: none;
   outline: none;
   border-radius: 8px;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   display: flex;
   gap: 8px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.upload-drag-div {
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  border: 1px dotted #e4e2e2;
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 16.7%;
+}
+
+.upload-drag-div-browse-text span {
+  font-family: var(--upload-page-font);
+  font-weight: var(--noraml-font-weight);
+  line-height: 24px;
+  text-align: center;
+  color: var(--main-gray-shade);
+}
+
+.upload-excel-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.selected-file-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--upload-page-font);
+  font-weight: var(--noraml-font-weight);
+  line-height: 24px;
+  text-align: center;
+  font-size: var(--common-font-size);
+}
+
+span.selected-file-name {
+  color: var(--main-gray-shade);
+}
+
+button#remove-selected-csv-file {
+  color: red;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.upload-button span {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: var(--secondary-font-weight);
+  font-family: var(--upload-page-font);
+}
+
+button.upload-button-disabled {
+  opacity: 50%;
 }
 
 .csv-file-label {
   display: inline-block;
   color: var(--main-app-color);
+}
+
+.upload-data-display-outer {
+  width: 92%;
+  border-radius: 8px;
+  margin-top: 104px;
+}
+
+.csv-file-data-display-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.data-table-outer {
+  width: 100%;
+  overflow: auto;
+  border-radius: 8px;
+  max-height: 426px;
+  overflow-x: hidden;
+}
+
+.file-data-section-table {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 1rem;
+  font-family: var(--upload-page-font);
+}
+
+tr.table-headings-row {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.table-data-rows {
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  margin: 0.5rem 0;
+  align-items: center;
+  font-size: 14px;
+}
+
+th,
+td {
+  flex: 1;
+  padding: 1rem;
+  text-align: left;
+}
+
+.td-id,
+.th-id {
+  flex: 0.5;
+}
+
+.td-select-tags,
+.th-select-tags {
+  flex: 1.5;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.td-links,
+.th-links {
+  flex: 2;
+}
+
+.td-selected-tags,
+.th-selected-tags {
+  flex: 3;
+}
+
+.td-selected-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.each-selected-tag {
+  background: var(--main-app-color);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.selected-tag-delete-button {
+  background: none;
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.areas-select-tag__control.css-13cymwt-control,
+.areas-select-tag__control.areas-select-tag__control--is-focused.areas-select-tag__control--menu-is-open.css-t3ipsp-control,
+.areas-select-tag__control.areas-select-tag__control--is-focused.css-t3ipsp-control {
+  border-radius: 8px;
+  min-height: 100%;
+  padding: 4px 6px;
+  gap: 8px;
+  width: 150px;
+}
+
+.areas-select-tag__input-container.css-qbdosj-Input {
+  display: flex;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.areas-select-tag__value-container.areas-select-tag__value-container--has-value.css-1fdsijx-ValueContainer {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+span.areas-select-tag__indicator-separator {
+  display: none;
+}
+
+.areas-select-tag__indicator.areas-select-tag__dropdown-indicator.css-1xc3v61-indicatorContainer,
+.areas-select-tag__indicator.areas-select-tag__dropdown-indicator.css-15lsz6c-indicatorContainer {
+  padding: 0 8px 0 0;
+}
+
+.areas-select-tag__menu.css-1nmdiq5-menu {
+  max-height: 205px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.areas-select-tag__option {
+  border-radius: 8px;
+  margin: 8px 8px 4px 8px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.areas-select-tag__option--is-focused,
+.areas-select-tag__option--is-hovered,
+.areas-select-tag__option--is-selected {
+  background-color: #f5f5f5;
+}
+
+.td-link a {
+  color: #5b93ff;
 }
