@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from '../pages/Auth/LandingPage';
 import UploadPage from '../pages/Upload/UploadPage';
@@ -12,7 +12,6 @@ import SideNav from './Navigation/SideNav';
 import AppHeader from './Header/AppHeader';
 
 const AppRouter = () => {
-  // const [authUser, setAuthUser] = useState(true);
   const authUser = true;
 
   return (
