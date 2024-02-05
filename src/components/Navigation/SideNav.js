@@ -14,6 +14,9 @@ const SideNav = () => {
 
   const navLinks = [
     {
+      to: '/',
+    },
+    {
       to: '/dashboard',
       label: 'Dashboard',
       iconSrc: DashboardIcon,
