@@ -14,6 +14,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: -1;
+  background: var(--secondary-app-background);
 }
 
 .skew-background {
@@ -28,7 +30,7 @@
 }
 
 .app-landing-logo {
-  width: 14%;
+  width: 13%;
   height: auto;
   margin: 4.5% 3.5% 0;
 }

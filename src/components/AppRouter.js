@@ -10,6 +10,7 @@ import NotificationPage from '../pages/MockPages/NotificationPage';
 import SettingsPage from '../pages/MockPages/SettingsPage';
 import SideNav from './Navigation/SideNav';
 import AppHeader from './Header/AppHeader';
+import UserSignUp from './SignUp/SignUpComp';
 
 const AppRouter = () => {
   const authUser = true;
@@ -19,6 +20,7 @@ const AppRouter = () => {
       {authUser ? (
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/signup" element={<UserSignUp />} />
         </Routes>
       ) : (
         <>
