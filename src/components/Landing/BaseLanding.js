@@ -1,11 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import LandingLogo from '../../assets/logo-white-300.png';
 import Footer from '../Footer/FooterSocials';
+import UserSignIn from '../SignIn/SignInComp';
 
 const BaseLanding = () => {
-  const text = 'from baselanding';
+  const navigate = useNavigate();
 
-  console.log(text);
+  const handleRegisterUserButton = () => {
+    navigate('/signup');
+  };
 
   return (
     <div className="base-landing-outer">
@@ -24,6 +28,9 @@ const BaseLanding = () => {
             <p className="sign-in-tagline">Sign in to your account</p>
           </div>
           {/* {google signin div here} */}
+          <div className="user-google-signin-outer">
+            <UserSignIn />
+          </div>
           <div className="sign-in-email-password-register-div">
             <form className="sign-in-email-password">
               <div className="form-elements">
@@ -61,7 +68,7 @@ const BaseLanding = () => {
                 Don&apos;t have an account?
                 {' '}
               </span>
-              <button type="button" id="user-register-action">
+              <button type="button" id="user-register-action" onClick={handleRegisterUserButton}>
                 Register here
               </button>
             </span>
