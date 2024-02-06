@@ -1,13 +1,20 @@
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../../redux/userAuthSlice';
 
 const UserSignIn = () => {
-  console.log('component from signincomp');
+  const dispatch = useDispatch();
+
+  const handleUserLogin = () => {
+    dispatch(userLogin());
+  };
 
   return (
     <GoogleLogin
-      onSuccess={reponse => {
+      onSuccess={(reponse) => {
         console.log(reponse);
+        handleUserLogin();
       }}
       onError={() => {
         console.log('Login Failed');
