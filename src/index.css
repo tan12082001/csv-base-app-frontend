@@ -40,6 +40,8 @@
 }
 
 nav {
+  display: flex;
+  flex-direction: column;
   font-family: var(--secondary-font-family);
   width: 100%;
   height: 100%;
@@ -58,6 +60,10 @@ nav {
 
 .nav-logo-text {
   font-size: 24px;
+}
+
+#close-nav-button {
+  display: none;
 }
 
 .nav-links-menu {
@@ -91,6 +97,11 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.mobile-header,
+.mobile-header-page-title {
+  display: none;
 }
 
 .common-page-outer {
@@ -146,4 +157,88 @@ input.search-input-bar {
 
 .header-bar-user-icon {
   border-radius: 50%;
+}
+
+.mobile-header-div-outer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .App {
+    display: flex;
+    background: var(--secondary-app-background);
+  }
+
+  nav {
+    position: absolute;
+    display: none;
+  }
+
+  .header-page-div {
+    width: 100%;
+  }
+
+  #close-nav-button {
+    display: flex;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .header-title,
+  .search-bar {
+    display: none;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .mobile-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .mobile-header-page-title {
+    display: flex;
+    padding: 30px;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .page-header {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .mobile-header-div-outer {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+  }
+
+  img.mobile-header-logo {
+    width: 26px;
+  }
+
+  button#header-hamburger-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .common-page-outer {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .nav-head-logo {
+    justify-content: space-between;
+  }
 }

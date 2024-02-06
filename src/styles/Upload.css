@@ -264,7 +264,11 @@ span.areas-select-tag__indicator-separator {
 }
 
 @media (max-width: 768px) {
-  .upload-page-outer {
-    background: purple;
+  .upload-file-div-outer {
+    width: 100%;
+  }
+
+  .data-table-outer {
+    overflow-x: scroll;
   }
 }

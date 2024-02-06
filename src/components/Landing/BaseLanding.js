@@ -20,7 +20,7 @@ const BaseLanding = () => {
           <img src={LandingLogo} alt="base-logo" className="landing-logo-img" />
         </div>
         <div className="app-landing-title">Base</div>
-        <Footer />
+        <Footer location="desktop-footer" />
       </div>
       <div className="landing-user-auth-outer">
         <div className="landing-user-auth-inner">
@@ -75,6 +75,7 @@ const BaseLanding = () => {
               </button>
             </span>
           </div>
+          <Footer location="mobile-footer" />
         </div>
       </div>
     </div>
