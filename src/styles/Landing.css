@@ -49,14 +49,22 @@ img.landing-logo-img {
   text-transform: uppercase;
 }
 
-footer.footer-socials-outer {
+footer.footer-socials-outer-desktop-footer {
   padding: 0 0 10% 0;
   margin-left: 18%;
 }
 
 .footer-socials {
   display: flex;
-  gap: 3rem;
+  gap: 8%;
+}
+
+a.each-social-icon-outer {
+  width: 8%;
+}
+
+img.each-social-icon {
+  width: 100%;
 }
 
 .landing-user-auth-outer {
@@ -169,8 +177,84 @@ button#apple-sign-in-button {
   background: #fff;
 }
 
+.footer-socials-outer-mobile-footer {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .base-landing-outer {
-    background: red;
+    flex-direction: column;
+  }
+
+  .app-title-socials {
+    flex-direction: row;
+    background: var(--main-app-color);
+    justify-content: normal;
+    flex: 0.1;
+    align-items: center;
+  }
+
+  .skew-background {
+    display: none;
+  }
+
+  .app-landing-logo {
+    margin: 4.5% 3.5%;
+  }
+
+  .app-landing-title {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .landing-user-auth-inner {
+    gap: 2rem;
+  }
+
+  .landing-user-auth-title-tagline {
+    padding: 1.6rem 1.6rem 0;
+  }
+
+  .user-google-signin-outer {
+    padding: 0 1.6rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #apple-sign-in-button {
+    height: 40px;
+    width: 226px;
+  }
+
+  .sign-in-email-password-register-div {
+    padding: 3rem;
+  }
+
+  .footer-socials-outer-desktop-footer {
+    display: none;
+  }
+
+  .footer-socials-outer-mobile-footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  a.each-social-icon-outer {
+    background: gray;
+    width: 12%;
+  }
+
+  img.each-social-icon {
+    width: 100%;
+  }
+
+  form.sign-in-email-password {
+    width: 320px;
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import LogoBlue from '../../assets/logo-blue.png';
 import DashboardIcon from '../../assets/dashboard-icon.png';
@@ -8,9 +9,14 @@ import ScheduleIcon from '../../assets/Document.png';
 import CalendarIcon from '../../assets/Calendar.png';
 import NotificationIcon from '../../assets/Notification.png';
 import SettingsIcon from '../../assets/Setting.png';
+import CancelIcon from '../../assets/cross-icon.png';
 
-const SideNav = () => {
+const SideNav = ({ isNavOpen, onCloseNav }) => {
   const location = useLocation();
+
+  const handleNavLinkClick = () => {
+    onCloseNav();
+  };
 
   const navLinks = [
     {
@@ -58,10 +64,13 @@ const SideNav = () => {
   ];
 
   return (
-    <nav className="flex-column">
+    <nav className={`${isNavOpen ? 'open' : ''}`}>
       <div className="nav-head-logo">
         <img src={LogoBlue} alt="Base-Logo" className="nav-logo-img" />
         <h3 className="nav-logo-text">Base</h3>
+        <button type="button" id="close-nav-button" onClick={onCloseNav}>
+          <img src={CancelIcon} alt="cancel" className="close-nav-bar" />
+        </button>
       </div>
       <ul className="nav-links-menu flex-column">
         {navLinks.map(({
@@ -70,6 +79,7 @@ const SideNav = () => {
           <li key={to}>
             <Link
               to={to}
+              onClick={handleNavLinkClick}
               className={`each-nav-link-a ${
                 location.pathname === to ? 'active' : ''
               }`}
@@ -82,6 +92,11 @@ const SideNav = () => {
       </ul>
     </nav>
   );
+};
+
+SideNav.propTypes = {
+  isNavOpen: PropTypes.bool.isRequired,
+  onCloseNav: PropTypes.func.isRequired,
 };
 
 export default SideNav;

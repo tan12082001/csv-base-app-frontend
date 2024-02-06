@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router, Route, Routes, Navigate,
 } from 'react-router-dom';
@@ -17,6 +17,15 @@ import UserSignUp from './SignUp/SignUpComp';
 
 const AppRouter = () => {
   const userAuthStatus = useSelector((state) => state.userAuth.userAuth);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const handleNavToogle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const handleCloseNav = () => {
+    setIsNavOpen(false);
+  };
 
   return (
     <Router>
@@ -27,9 +36,9 @@ const AppRouter = () => {
         </Routes>
       ) : (
         <>
-          <SideNav />
+          <SideNav isNavOpen={isNavOpen} onCloseNav={handleCloseNav} />
           <div className="header-page-div">
-            <AppHeader />
+            <AppHeader onNavToggle={handleNavToogle} />
             <Routes>
               <Route path="/" element={<Navigate to="/dashboard" />} />
               <Route path="/dashboard" element={<DashboardPage />} />

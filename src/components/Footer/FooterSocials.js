@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GitHubIcon from '../../assets/github-icon.png';
 import TwitterIcon from '../../assets/twitter-icon.png';
 import LinkedInIcon from '../../assets/linkedin-icon.png';
 import DiscordIcon from '../../assets/discord-icon.png';
 
-const Footer = () => {
+const Footer = ({ location }) => {
   const links = {
     GitHub: 'https://github.com/',
     Twitter: 'https://twitter.com/',
@@ -13,7 +14,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-socials-outer">
+    <footer className={`footer-socials-outer-${location}`}>
       <div className="footer-socials">
         <a className="each-social-icon-outer" href={links.GitHub} target="_blank" rel="noopener noreferrer">
           <img src={GitHubIcon} alt="gitHub" className="each-social-icon" />
@@ -30,6 +31,10 @@ const Footer = () => {
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  location: PropTypes.string.isRequired,
 };
 
 export default Footer;
