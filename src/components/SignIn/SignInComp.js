@@ -15,9 +15,6 @@ const UserSignIn = () => {
       onSuccess={() => {
         handleUserLogin();
       }}
-      onError={() => {
-        console.log('Login Failed');
-      }}
       useOneTap
     />
   );
