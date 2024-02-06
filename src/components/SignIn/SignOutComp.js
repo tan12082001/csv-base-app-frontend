@@ -12,7 +12,6 @@ const UserAppLogOut = () => {
     dispatch(userLogout());
     navigate('/');
     googleLogout();
-    console.log('user logged out successfully');
   };
 
   return (

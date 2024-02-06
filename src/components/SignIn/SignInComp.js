@@ -12,8 +12,7 @@ const UserSignIn = () => {
 
   return (
     <GoogleLogin
-      onSuccess={(reponse) => {
-        console.log(reponse);
+      onSuccess={() => {
         handleUserLogin();
       }}
       onError={() => {
