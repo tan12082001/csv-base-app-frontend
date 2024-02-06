@@ -152,3 +152,25 @@ button#sign-in-button-action {
   display: flex;
   justify-content: center;
 }
+
+.user-google-signin-outer {
+  display: flex;
+  gap: 1.6rem;
+}
+
+button#apple-sign-in-button {
+  border: 1px solid #dad9d9;
+  border-radius: 4px;
+  padding: 0.5rem 1.6rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 12px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .base-landing-outer {
+    background: red;
+  }
+}

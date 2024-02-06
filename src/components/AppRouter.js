@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Routes, Navigate,
+} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import LandingPage from '../pages/Auth/LandingPage';
 import UploadPage from '../pages/Upload/UploadPage';
 import DashboardPage from '../pages/Dashboard/DashboardPage';
@@ -13,11 +16,11 @@ import AppHeader from './Header/AppHeader';
 import UserSignUp from './SignUp/SignUpComp';
 
 const AppRouter = () => {
-  const authUser = true;
+  const userAuthStatus = useSelector((state) => state.userAuth.userAuth);
 
   return (
     <Router>
-      {authUser ? (
+      {!userAuthStatus ? (
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signup" element={<UserSignUp />} />
@@ -28,6 +31,7 @@ const AppRouter = () => {
           <div className="header-page-div">
             <AppHeader />
             <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/upload" element={<UploadPage />} />
               <Route path="/invoice" element={<InvoicePage />} />

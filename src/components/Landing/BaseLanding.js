@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import LandingLogo from '../../assets/logo-white-300.png';
 import Footer from '../Footer/FooterSocials';
 import UserSignIn from '../SignIn/SignInComp';
+import SignInWithApple from '../SignIn/SignInAppleComp';
 
 const BaseLanding = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const BaseLanding = () => {
           {/* {google signin div here} */}
           <div className="user-google-signin-outer">
             <UserSignIn />
+            <SignInWithApple />
           </div>
           <div className="sign-in-email-password-register-div">
             <form className="sign-in-email-password">
