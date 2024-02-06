@@ -186,12 +186,17 @@ button#apple-sign-in-button {
     flex-direction: column;
   }
 
+  .landing-page-outer {
+    width: auto;
+  }
+
   .app-title-socials {
     flex-direction: row;
     background: var(--main-app-color);
     justify-content: normal;
     flex: 0.1;
     align-items: center;
+    z-index: 1;
   }
 
   .skew-background {
@@ -217,7 +222,6 @@ button#apple-sign-in-button {
 
   .user-google-signin-outer {
     padding: 0 1.6rem;
-    flex-direction: column;
     gap: 0.2rem;
     justify-content: center;
     align-items: center;
@@ -225,7 +229,7 @@ button#apple-sign-in-button {
 
   #apple-sign-in-button {
     height: 40px;
-    width: 226px;
+    width: 50%;
   }
 
   .sign-in-email-password-register-div {
