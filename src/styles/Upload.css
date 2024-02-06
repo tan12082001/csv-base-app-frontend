@@ -262,3 +262,9 @@ span.areas-select-tag__indicator-separator {
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1;
 }
+
+@media (max-width: 768px) {
+  .upload-page-outer {
+    background: purple;
+  }
+}

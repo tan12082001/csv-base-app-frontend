@@ -1,5 +1,11 @@
+import '../../styles/Landing.css';
 import React from 'react';
+import BaseLanding from '../../components/Landing/BaseLanding';
 
-const LandingPage = () => <div>Landing page with signin and signup</div>;
+const LandingPage = () => (
+  <div className="landing-page-outer">
+    <BaseLanding />
+  </div>
+);
 
 export default LandingPage;

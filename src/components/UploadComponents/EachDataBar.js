@@ -1,1 +1,0 @@
-// EachDataBar component.
