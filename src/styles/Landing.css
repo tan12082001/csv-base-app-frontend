@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: -1;
+  z-index: 2;
   background: var(--secondary-app-background);
 }
 
@@ -179,6 +179,10 @@ button#apple-sign-in-button {
 
 .footer-socials-outer-mobile-footer {
   display: none;
+}
+
+a.each-social-icon-outer:hover {
+  transform: scaleX(1.2);
 }
 
 @media (max-width: 768px) {
