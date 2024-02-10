@@ -182,7 +182,7 @@ button#apple-sign-in-button {
 }
 
 a.each-social-icon-outer:hover {
-  transform: scaleX(1.2);
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
